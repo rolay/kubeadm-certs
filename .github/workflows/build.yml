@@ -43,6 +43,7 @@ jobs:
               git branch
            
               sed -i 's#time.Hour \* 24 \* 365#time.Hour * 24 * 365 * 10#g'  cmd/kubeadm/app/constants/constants.go
+              sed -i 's#duration365d * 10#duration365d * 100#g'  staging/src/k8s.io/client-go/util/cert/cert.go
               grep -n -R CertificateValidity ./*
               grep -n -R duration365d ./*
            
